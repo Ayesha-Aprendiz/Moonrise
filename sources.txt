@@ -1,0 +1,6 @@
+---For Icons---
+https://boxicons.com/
+
+$sha1 is often used to refer to the SHA-1 hash of a string in PHP. The SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that produces a 160-bit (20-byte) hash value, typically rendered as a 40-character hexadecimal number.
+
+In PHP, the sha1() function can be used to generate the SHA-1 hash of a given string.
