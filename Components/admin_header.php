@@ -1,4 +1,5 @@
 <?php
+
     if(isset($message))
     {
         foreach ($message as $message)
@@ -11,6 +12,13 @@
             
             ';
         }
+    }
+    if(isset($_COOKIE['faculty_id'])){
+     
+        $faculty_id = $_COOKIE['faculty_id'];
+        echo "<script>console.log('Retrieved faculty_id from cookie: " . $faculty_id . "');</script>"; // Debugging
+    } else {
+        $faculty_id = '';
     }
 ?>
 <header class="header">
@@ -31,16 +39,21 @@
 
         <div class="profile">
             <?php
-                $select_profile = $conn->prepare("SELECT * From `faculties` WHERE id = ? ");
+            
+                $select_profile = $conn->prepare("SELECT * From `faculties` WHERE faculty_id = ? ");
                 $select_profile->execute(array($faculty_id));
 
+                
+
                 if($select_profile->rowCount() > 0){ 
-                    $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+
+                echo "<script>console.log('Retrieved faculty_id from cookie: " . $fetch_profile['faculty_name'] . "');</script>"; // Debugging
 
             ?>
-            <img src="../uploaded_files/<?= $fetch_profile['profile_image']; ?>">
-            <h3> <?= $fetch_profile['name']; ?> </h3>
-            <span> <?= $fetch_profile['profession']; ?> </span> <br/>
+            <img src="../uploaded_files/<?php echo $fetch_profile['profile_image']; ?>">
+            <h3><?php echo $fetch_profile['faculty_name']; ?>  <br/>
+            <?php echo $fetch_profile['profession']; ?></h3> <br/>
 
             <div id="flex-btn">
                 <a href="profile.php" class="btn"> View Profile</a>
@@ -65,15 +78,16 @@
 <div class="side-bar">
     <div class="profile">
         <?php
-        $select_profile = $conn->prepare("SELECT * From `faculties` WHERE id = ? ");
+        $select_profile = $conn->prepare("SELECT * From `faculties` WHERE faculty_id = ? ");
         $select_profile->execute(array($faculty_id));
         if($select_profile->rowCount() > 0) { 
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);        
         ?>
 
-            <img src="../uploaded_files/<?= $fetch_profile['profile_image']; ?>" >
-            <h3> <?= $fetch_profile['name']; ?> </h3>
-            <p> <?= $fetch_profile['profession']; ?> </p>
+            <img src="../uploaded_files/<?php echo $fetch_profile['profile_image']; ?>">
+            <h3><?php echo $fetch_profile['faculty_name']; ?>  <br/>
+            <?php echo $fetch_profile['profession']; ?></h3> <br/>
+
             <a href="profile.php" class="btn" > View Profile </a>
 
         <?php }

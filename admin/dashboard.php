@@ -5,7 +5,7 @@
         $faculty_id =  $_COOKIE['faculty_id'];
     }else{
         $faculty_id='';
-        // header('location: login.php');
+        header('location: login.php');
     }
 
 ?>
@@ -25,7 +25,9 @@
 
     </head>
     <body>
-        <?php include '../Components/admin_header.php'; ?>
+        <?php include '../Components/admin_header.php'; 
+        
+        ?>
         <script type="text/javascript" >
             <?php include '../js/admin_script.js'; ?>
 

@@ -1,5 +1,5 @@
 <?php 
-    include '../components/connect.php';
+    include '../Components/connect.php';
 
     if(isset($_POST['submit'])){
         $id = unique_id();
@@ -43,11 +43,6 @@
                 echo "<script>alert('New Faculty Registered!! You can Login now.');</script>";
             }
         }
-
-
-
-
-
     }
 ?>
     <style>
@@ -72,7 +67,7 @@
 
     </head>
 
-    <body class="reg-body" >
+    <body  >
         <?php
             if(isset($message))
             {
@@ -88,10 +83,13 @@
                 }
             }
         ?>
-        <img src='../images/logofinal.png'  class="logo"  >
+        <header class="header">
+            <section class="flex">
+                <img src="../images/logofinal.png"  width="130px" class= 'reg-logo' > 
+            </section>
+        </header>
+        <!-- <img src='../images/logofinal.png'  class="logo"  > -->
         <div class='form-container'>
-        
-        
             <form action="" method="post" enctype="multipart/form-data" class="register">
                 <h3>Register Now</h3>
                 <div class="flex">
@@ -106,15 +104,14 @@
                         <p>Your Profession <span>*</span></p>
                         <select name="profession" required class="box">
                             <option value="" disabled selected>--Select your Profession--</option>
-                            <option value="developer">Developer</option>
-                            <option value="designer">Designer</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="Web developer">Developer</option>
+                            <option value="UX/UI Designer">UX/UI Designer</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Full Stack Developer">Full Stack Developer</option>
+                            <option value="E-commerce Specialist">E-commerce Specialist</option>
+                            <option value="Network Engineer">Network Engineer</option>
                         </select>
-                        
-
                     </div>
                     <div class="col">
                     <p>Your Email <span>*</span></p>
