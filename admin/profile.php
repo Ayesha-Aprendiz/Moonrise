@@ -32,7 +32,7 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+    <title>faculty profile</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -47,44 +47,42 @@
     </head>
     <body>
         <?php include '../Components/admin_header.php'; ?>
-        <section class="dashboard">
-            <h1 class="heading"> Dashboard </h1>
+        <section class="faculty-profile" style="min-height: calc(100vh - 19rem);">
+            <h1 class="heading"> Profile Details </h1>
 
-            <div class='box-container'>
-                <div class='box'>
-                    <h3>Welcome!!</h3>
-                    <p><?= $fetch_profile['faculty_name']; ?></p>
-                    <a href="profile.php" class="btn">View Profile</a>
+            <div class="details">
+                <div class="faculty">
+                    <img src="../uploaded_files/<?= $fetch_profile['profile_image']; ?>">
+                    <h3> <?= $fetch_profile['faculty_name']?></h3>
+                    <span> <?= $fetch_profile['profession']?></span>
+                    <a href="update.php" class="btn">Update Profile</a>
                 </div>
-                <div class='box'>
-                    <h3><?= $total_contents; ?></h3>
-                    <p>Total Contents</p>
-                    <a href="add_content.php" class="btn">Add new Content</a>
-                </div>
-                <div class='box'>
-                    <h3><?= $total_playlists; ?></h3>
-                    <p>Total Playlists</p>
-                    <a href="add_playlists.php" class="btn">Add new Playlists</a>
-                </div>
-                <div class='box'>
-                    <h3><?= $total_likes; ?></h3>
-                    <p>Total Likes</p>
-                    <a href="contents.php" class="btn">View Contents</a>
-                </div>
-                <div class='box'>
-                    <h3><?= $total_comments; ?></h3>
-                    <p>Total Comments</p>
-                    <a href="comments.php" class="btn">View Comments</a>
-                </div>
-                <div class='box'>
-                    <h3>Quick Start</h3>
-                    <div class="flex-btn">
-                        <a href="login.php" class="btn" style="width:200px">Login Now</a>
-                        <a href="register.php" class="btn" style="width:200px">Register Now</a>
-
+                <div class="flex">
+                    <div class="box">
+                        <span> <?= $total_playlists; ?></span>
+                        <p>Total Courses</p>
+                        <a href="playlists.php" class="btn">View Playlists</a>
                     </div>
+                    <div class="box">
+                        <span> <?= $total_contents; ?></span>
+                        <p>Total Videos</p>
+                        <a href="contents.php" class="btn">View Contents</a>
+                    </div>
+                    <div class="box">
+                        <span> <?= $total_likes; ?></span>
+                        <p>Total Likes</p>
+                        <a href="contents.php" class="btn">View Contents</a>
+                    </div>
+                    <div class="box">
+                        <span> <?= $total_comments; ?></span>
+                        <p>Total Comments</p>
+                        <a href="comments.php" class="btn">View Comments</a>
+                    </div>
+
                 </div>
             </div>
+
+            
         </section>
         <?php include '../Components/footer.php'; ?>
         <script type="text/javascript" >

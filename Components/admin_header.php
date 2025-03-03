@@ -27,7 +27,7 @@
             <img src="../images/logofinal.png"  width="130px"  > 
         </a>
         <form action="search_page.php" method="post" class="search-form">
-            <input type="text" name="search" placeholder="search here.."
+            <input type="text" name="search" placeholder="Search here.."
             required maxlength="100">
             <button type="submit" class="bx bx-search-alt-2" name="search-btn"></button>
         </form>
@@ -105,9 +105,8 @@
         <a href="dashboard.php"><i class = "bx bxs-home-heart" ></i> <span> Home </span></a>
         <a href="playlists.php"><i class = "bx bxs-receipt" ></i> <span> Playlist </span></a>
         <a href="contents.php"><i class = "bx bxs-graduation" ></i> <span> Contents </span></a>
-        <a href="comments.php"><i class = "bx bxs-home-heart" ></i> <span> Home </span></a>
+        <a href="comments.php"><i class = "bx bxs-chat" ></i> <span> Comments </span></a>
         <a href="../Components/admin_logout.php" onclick="return confirm('Logout from this wesbite?');">
             <i class = "bx bxs-log-in-circle" ></i> <span> Logout </span></a>
-
     </nav>
 </div>

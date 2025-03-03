@@ -10,18 +10,7 @@
         echo "Not connected";
     }
 
-    function unique_id()
-    {
-        $str= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-        $rand= array();
-        $length= strlen($str)-1;
-
-        for($i=0; $i<20; $i++)
-        {
-            $n = mt_rand(0, $length);
-            $rand[] = $str[$n];
-
-        }
-        return implode($rand);
+    function unique_id($length = 20) {
+        return bin2hex(random_bytes($length / 2)); // Each byte produces 2 hex characters
     }
 ?>
